@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>RPG</title>
+</head>
+<body>
+
+    <div id="start">
+        <p>Bonjour aventurier ! Et bienvenue dans notre monde. <br></p>
+        <p>Nous avons un problème qui n’nécessite votre aide. <br></p>
+        <p>les Humain ce sont emparer du «Rokas », un artéfact d’une puissance inouïe qui permet de prendre le contrôle de n’importe quelle entité. <br></p> 
+        <p>Le « Rokas » fut jadis sceller dans l’outre monde, nous ignorons comment les Humains ont pue s’en emparer, mais ce qui est sûr, c’est que cela ne pressage rien de bon. <br></p>
+        <p>Vous devez le récuperer avant que les humains ne s'en servent ! Il pourrait commetre l'iréparable et exterminer notre monde !</p>
+        <button onclick="start()">GO !</button>
+    </div> 
+
+    <div id="Steep1" hidden>
+
+        <div id="question1"> 
+            <h1>Donc vous ête un ?</h1> 
+        </div>
+
+        <div id="choix">
+
+            <div id="race1">
+                <div id="img1">
+                    <img src="img/elfe.jpg" alt="race"> 
+                </div>
+                <div id="stat1">
+                    <h3>L'Elfe</h3>
+                    <p>A une faible vitaliter mais inflige de lourd dégats</p>
+                </div>
+                <div id="bouton1">
+                    <button onclick="CreatePerso(1)">Je suis un elfe</button>
+                </div>            
+            </div>
+            
+            <div id="race2">
+                <div id="img1">
+                    <img src="img/orc.jpg" alt="race">
+                </div>
+                <div id="stat2">
+                    <h3>L'Orc</h3>
+                    <p>Très resistant mais inflige peut de dégats</p>
+                </div>
+                <div id="bouton1">
+                    <button onclick="CreatePerso(2)">Je suis un Orc</button>
+                </div>            
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="status">
+        <div id="static_status" hidden>
+            <div id="titre">
+                <h2>Vous</h2>
+            </div>
+            <div id="photo_perso">
+                <img id="imgr" src="" alt="race">
+            </div>
+            <div id="txt">
+                <p id="txtp"></p>
+            </div>
+        </div>
+
+        <div id="fightvs" hidden>
+            <h1>VS</h1>
+        </div>
+
+        <div id="status_monster" hidden>
+            <div id="titre">
+                <h2 id="nom_Monster_1"></h2>
+            </div>
+            <div id="photo_perso">
+                <img id="monster_1" src="" alt="race">
+            </div>
+            <div id="txt">
+                <p id="txt_m"></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="Steep2" hidden>
+
+        <div id="question2">
+            <p>Jeune aventurier, nous pouvons crée de portail de déplacement instantané <br></p>
+            <p>Nous avons localiser plusieur trace potentiel du "Rokas" ! <br></p>
+            <p>Nous pouvons vous amenez soit au Tartare, la capitale de l'enfer <br></P>
+            <p>soit au Valhala, un pseudo paradie nordique ! <br></p>
+            <p>c'est à vous de choisir !</p> 
+        </div>
+        <div id="choix2">
+            <div id="dir1">
+                <div id="bouton_dir1">
+                    <button onclick="DirTartare()">TarTare</button>
+                </div>
+            </div>
+    
+            <div id="dir2">
+                <div id="bouton_dir1">
+                    <button onclick="DirValhala()">Valhala</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="Steep3" hidden>
+        <div id="question3">
+            <p id="enterin?"> <br> </p>
+            <p id="rokashere?"> <br> </p>
+            <p>Attender ! <br> </p>
+            <p>Les humains ce sont servie du "Rokas" pour posseder</p>
+            <h3 id="nomMonster1"></h3>
+            <img id="monster1" src="" alt="ennemie">
+            <p>Nous avons deux posibilité <br></p>
+            <p>Soit Vous tenter de fuir <br></p>
+            <p>Soit Vous le combater !</p>
+        </div>
+
+        <div id="choixS3">
+            <button onclick="fuite()">Fuir</button>
+            <button onclick="fight1()">Combatre</button>
+            
+        </div>
+    </div>
+
+    <div id="attak" hidden>
+        <div id="attak_me">
+            <div id="attak_top">
+                <button id="A1" onclick="fight_attck(1)"></button>
+                <button id="A2" onclick="fight_attck(2)"></button>
+
+            </div>
+            <div id="attack_bot">
+                <button id="A3" onclick="fight_attck(3)"></button>
+                <button id="A4" onclick="fight_attck(4)"></button>
+            </div>
+        </div>
+
+        <div id="txt_war">
+            <textarea id="logWar" cols="50" rows="2" disabled></textarea>
+        </div>
+
+    </div>
+
+    <div id="finalSteep" hidden>
+        <div id="txtFianl">
+            <p id="p1f"></p>
+            <p>Nous avons analyser le mana que dégager ce posseder !</p>
+            <p>Et grace à ca nous avons découvert le lieu exact ou ce trouver le "rokas"</p>
+            <p>Voulez vous nous accompagner ? </p>
+        </div>
+
+        <div id="choix_final">
+            <button onclick="prochainement()">" avec plaisir ! "</button>
+            <button onclick="prochainement()"> " je vous est suffisament aider, maintenant faite moi rentrer chez moi ! "</button>
+            <button onclick="prochainement()"> Tenter de soutirer des info sur le positionnement du "Rokas"</button>
+        </div>
+    </div>
+
+    <div id="prochainement" hidden>
+        <h2>j'espere que mon jeu vous à plus, la suite arrive bientôt ! <br> Alors pourrait vous devinez ce qui va ce passer ? </h2>
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <div id="perdu" hidden>
+        <div id="titreP">
+            <h1>Vous ête mort</h1>
+        </div>
+        <div id="txtP">
+            <p id="causePerdu"></p>
+        </div>
+        <button onclick="refreshGame()">Rejouer</button>
+    </div>
+
+</body>
+</html>
